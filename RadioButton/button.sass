@@ -1,0 +1,35 @@
+.radio-custom
+  display: none
+
+.radio-custom-label
+  position: relative
+  display: flex
+  margin-bottom: 0.5rem
+  &::before
+    content: ''
+    margin-top: 1px
+    background: #fff
+    border: 1px solid #9E9E9E
+    display: inline-block
+    vertical-align: middle
+    width: 20px
+    height: 20px
+    margin-right: 10px
+    text-align: center
+    border-radius: 50%
+
+.radio-custom:checked + .radio-custom-label
+  &:before
+    border: 1px solid $main-color
+
+.radio-custom:checked + .radio-custom-label
+  &:after
+    font-family: "Font Awesome 6 Pro"
+    position: absolute
+    z-index: 1
+    font-size: 14px
+    content: "\f00c"
+    top: 6px
+    left: 4px
+    color: $main-color
+

@@ -1,0 +1,137 @@
+.progressBar
+  display: flex
+  align-items: center
+  position: relative
+  margin: 5px
+  &--column
+    flex-direction: column
+  &--column-reverse
+    flex-direction: column-reverse
+
+
+  .progressBarContainer
+    border-radius: 4px
+    width: 100%
+    overflow: hidden
+    background-color: lighten(#01BB9D, 60%)
+
+
+  .progressBarFill
+    height: 100%
+    border-radius: 4px
+    transition: width 0.8s ease-in-out
+    background-color: #01BB9D
+
+
+  .progressBarText
+    font-size: 14px
+    color: #000000
+    padding: 2px 4px 2px 4px
+    &--top
+      position: absolute
+      top: -30px
+      background-color: #fff
+      border-radius: 4px
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+      &::after
+        content: ""
+        position: absolute
+        top: 100%
+        left: 50%
+        margin-left: -2px
+        border-width: 2px
+        border-style: solid
+        border-color: white transparent transparent transparent
+
+
+.circularProgressBar
+  position: relative
+
+  .outer
+    height: 160px
+    width: 160px
+    border-radius: 50%
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.15),-6px -6px 10px -1px rgba(255,255,255,0.7)
+
+
+  .inner
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    border-radius: 50%
+    background-color: #fff
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255, 255,255,1),0.5px 0.5px 0px rgba(0, 0,0,0.15),0px 12px 10px -10px rgba(0, 0,0,0.15),
+
+  .circularProgressCounter
+    font-size: 16px
+    color: #000000
+
+
+  .svg
+    position: absolute
+    top: 0
+    left: 0
+
+  .circle
+    fill: none
+    transform-origin: 50% 50%
+    transform: rotate(-90deg)
+    transition: 0.3s linear
+
+
+.circularProgressText
+  font-size: 14px
+  color: rgba(0, 0, 0, 0.24)
+
+
+
+.bubbleProgressBar
+  .progress-container
+    display: flex
+    justify-content: space-between
+    position: relative
+    margin-bottom: 20px
+    width: 100%
+
+
+  .progress-container::before
+    content: '' /*your have to write this to be able to see it*/
+    background-color: lightgrey
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    height: 4px
+    width: 100% /*it represents the empty line*/
+    z-index: -1
+
+
+  .progress
+    background-color: $main-color
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    height: 4px
+    width: 100%
+    z-index: 1
+    transition: 0.4s ease
+
+
+  .circles
+    color: #999
+    border-radius: 50%
+    height: 20px
+    width: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 3px solid lightgray
+    transition: 0.4s ease
+    z-index: 2
+    background-color: white
+    border-color: $main-color
+
+    &.active
+      background-color: $main-color
